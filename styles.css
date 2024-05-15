@@ -22,6 +22,16 @@ body {
     text-align: center;
 }
 
+.toolbar button {
+    background-color: #007bff; /* Blue background */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 #editor {
     border: 1px solid #000;
     border-radius: 5px;
@@ -33,14 +43,4 @@ body {
     line-height: 1.6;
     width: 100%;
     box-sizing: border-box;
-}
-
-#saveBtn {
-    background-color: #007bff; /* Blue background */
-    color: #000; /* Black text */
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
 }
