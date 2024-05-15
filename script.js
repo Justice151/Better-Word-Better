@@ -104,6 +104,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.execCommand("redo");
     });
 
+    // Font selection functionality
+    var fontSelect = document.getElementById('fontSelect');
+    fontSelect.addEventListener('change', function() {
+        var selectedFont = fontSelect.value;
+        editor.style.fontFamily = selectedFont;
+    });
+
     function saveToLocalStorage(text) {
         localStorage.setItem("text", text);
     }
