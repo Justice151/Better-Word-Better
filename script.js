@@ -25,6 +25,42 @@ document.addEventListener("DOMContentLoaded", function() {
         exportText();
     });
 
+    // Import button functionality
+    var importBtn = document.getElementById("importBtn");
+    var importFileInput = document.getElementById("importFile");
+    importBtn.addEventListener("click", function() {
+        importFileInput.click(); // Trigger click on file input
+    });
+
+    importFileInput.addEventListener("change", function(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function() {
+            editor.innerHTML = reader.result; // Insert file content into the editor
+        };
+
+        reader.readAsText(file);
+    });
+
+    // Set Background button functionality
+    var bgBtn = document.getElementById("bgBtn");
+    var bgUploadInput = document.getElementById("bgUpload");
+    bgBtn.addEventListener("click", function() {
+        bgUploadInput.click(); // Trigger click on background image upload input
+    });
+
+    bgUploadInput.addEventListener("change", function(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function() {
+            document.body.style.backgroundImage = "url('" + reader.result + "')"; // Set background image
+        };
+
+        reader.readAsDataURL(file);
+    });
+
     // Toggle style buttons
     var boldBtn = document.getElementById("boldBtn");
     var italicBtn = document.getElementById("italicBtn");
