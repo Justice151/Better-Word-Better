@@ -2,18 +2,26 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex; /* Use flexbox to center vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Use full viewport height */
 }
 
 .container {
     max-width: 800px;
-    margin: 20px auto;
     padding: 0 20px;
 }
 
 #editor {
-    border: 1px solid #ccc;
-    min-height: 300px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    min-height: 50vh; /* Set initial height to 50% of viewport height */
+    max-height: 80vh; /* Set maximum height */
+    overflow-y: auto; /* Allow vertical scrolling */
     padding: 10px;
     font-size: 16px;
     line-height: 1.6;
+    width: 100%; /* Set width to 100% */
+    box-sizing: border-box;
 }
