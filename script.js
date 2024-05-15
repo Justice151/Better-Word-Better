@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var docNameInput = document.getElementById("docNameInput");
 
     // Save text to localStorage when user stops typing or at intervals
-    var autosaveTimer; // Timer variable for autosave
+    var autosaveTimer;
     editor.addEventListener("input", function() {
-        clearTimeout(autosaveTimer); // Clear previous timer
+        clearTimeout(autosaveTimer);
         autosaveTimer = setTimeout(function() {
             saveToLocalStorage(editor.innerHTML);
             alert("Document autosaved!");
-        }, 2000); // Autosave after 2 seconds of inactivity
+        }, 2000);
     });
 
     // Load text from localStorage when the page loads
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var importBtn = document.getElementById("importBtn");
     var importFileInput = document.getElementById("importFile");
     importBtn.addEventListener("click", function() {
-        importFileInput.click(); // Trigger click on file input
+        importFileInput.click();
     });
 
     importFileInput.addEventListener("change", function(event) {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var reader = new FileReader();
 
         reader.onload = function() {
-            editor.innerHTML = reader.result; // Insert file content into the editor
+            editor.innerHTML = reader.result;
         };
 
         reader.readAsText(file);
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var bgBtn = document.getElementById("bgBtn");
     var bgUploadInput = document.getElementById("bgUpload");
     bgBtn.addEventListener("click", function() {
-        bgUploadInput.click(); // Trigger click on background image upload input
+        bgUploadInput.click();
     });
 
     bgUploadInput.addEventListener("change", function(event) {
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var reader = new FileReader();
 
         reader.onload = function() {
-            document.body.style.backgroundImage = "url('" + reader.result + "')"; // Set background image
+            document.body.style.backgroundImage = "url('" + reader.result + "')";
         };
 
         reader.readAsDataURL(file);
@@ -69,14 +69,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Document name input functionality
     docNameInput.addEventListener("input", function() {
-        updateDocumentTitle(); // Update document title when document name changes
+        updateDocumentTitle();
     });
 
     // Add Image button functionality
     var addImageBtn = document.getElementById("addImageBtn");
     var imageUploadInput = document.getElementById("imageUpload");
     addImageBtn.addEventListener("click", function() {
-        imageUploadInput.click(); // Trigger click on image upload input
+        imageUploadInput.click();
     });
 
     imageUploadInput.addEventListener("change", function(event) {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
         reader.onload = function() {
             var img = new Image();
             img.src = reader.result;
-            editor.appendChild(img); // Append the image to the editor
+            editor.appendChild(img);
         };
 
         reader.readAsDataURL(file);
@@ -109,28 +109,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function exportText() {
-        var textToExport = editor.innerText; // Get the text content of the editor
-        var blob = new Blob([textToExport], { type: "text/plain" }); // Create a Blob containing the text
-        var url = URL.createObjectURL(blob); // Create a URL for the Blob
+        var textToExport = editor.innerText;
+        var blob = new Blob([textToExport], { type: "text/plain" });
+        var url = URL.createObjectURL(blob);
 
-        var docName = docNameInput.value.trim() || "document"; // Get the document name, fallback to "document" if empty
-        var fileName = docName + ".txt"; // Construct the file name
+        var docName = docNameInput.value.trim() || "document";
+        var fileName = docName + ".txt";
 
-        // Create a temporary <a> element to trigger the download
         var a = document.createElement("a");
         a.href = url;
-        a.download = fileName; // Set the filename for the download
+        a.download = fileName;
         document.body.appendChild(a);
-        a.click(); // Click the <a> element to trigger the download
-        document.body.removeChild(a); // Remove the <a> element
+        a.click();
+        document.body.removeChild(a);
     }
 
     function updateDocumentTitle() {
         var docName = docNameInput.value.trim();
         if (docName !== "") {
-            document.title = docName + " - Online Word Program"; // Set document title
+            document.title = docName + " - Online Word Program";
         } else {
-            document.title = "Online Word Program"; // Default title
+            document.title = "Online Word Program";
         }
     }
 });
