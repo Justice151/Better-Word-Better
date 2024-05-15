@@ -111,6 +111,13 @@ document.addEventListener("DOMContentLoaded", function() {
         editor.style.fontFamily = selectedFont;
     });
 
+    // Font size selection functionality
+    var fontSizeSelect = document.getElementById('fontSizeSelect');
+    fontSizeSelect.addEventListener('change', function() {
+        var selectedFontSize = fontSizeSelect.value;
+        editor.style.fontSize = selectedFontSize + 'px';
+    });
+
     function saveToLocalStorage(text) {
         localStorage.setItem("text", text);
     }
