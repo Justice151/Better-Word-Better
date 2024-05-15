@@ -48,15 +48,15 @@ body {
 
 .toolbar {
     background-color: #343a40; /* Dark background for the toolbar */
-    padding: 10px 0;
+    padding: 10px;
     text-align: center;
     border-radius: 5px; /* Rounded corners */
-    margin: 20px auto; /* Center the toolbar horizontally */
+    margin-bottom: 20px; /* Add margin below toolbar */
     max-width: 800px; /* Limit the width of the toolbar */
 }
 
-.toolbar button {
-    background-color: #4285f4; /* Blue background */
+.toolbar-button {
+    background-color: #0056b3; /* Blue background */
     color: #fff; /* White text */
     border: none;
     border-radius: 5px;
@@ -66,22 +66,54 @@ body {
     margin: 0 5px; /* Add margin between buttons */
 }
 
-.toolbar button#exportBtn,
-.toolbar button#bgBtn { /* Adjust styles for export and background buttons */
-    margin-left: 10px; /* Add margin to separate buttons */
+.toolbar-button:hover {
+    background-color: #004080; /* Darker blue on hover */
 }
 
-.toolbar button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.toolbar-button:active {
+    background-color: #004080; /* Darker blue when active */
 }
 
-.toolbar button:active {
-    background-color: #0056b3; /* Darker blue when active */
-}
-
-.toolbar button:focus,
+.toolbar-button:focus,
 #docNameInput:focus,
 #fontSelect:focus,
 #fontSizeSelect:focus {
     outline: none; /* Remove outline on focus for better visual appearance */
+}
+
+.toolbar-dropdown {
+    background-color: #0056b3; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px; /* Add margin between dropdowns */
+}
+
+.toolbar-dropdown:hover {
+    background-color: #004080; /* Darker blue on hover */
+}
+
+.toolbar-dropdown:active {
+    background-color: #004080; /* Darker blue when active */
+}
+
+#editor::-webkit-scrollbar {
+    width: 10px;
+}
+
+#editor::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+#editor::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#editor::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 5px;
 }
