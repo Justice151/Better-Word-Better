@@ -141,6 +141,12 @@ document.addEventListener("DOMContentLoaded", function() {
             document.execCommand("underline");
             underlineBtn.classList.toggle("active", isUnderline);
         }
+        else if (event.ctrlKey && event.key === "z") {
+            document.execCommand("undo");
+        }
+        else if (event.ctrlKey && event.key === "y") {
+            document.execCommand("redo");
+        }
     });
 
     function saveToLocalStorage(text) {
