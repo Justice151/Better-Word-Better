@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var editor = document.getElementById("editor");
+    var docNameInput = document.getElementById("docNameInput");
 
     // Save text to localStorage when user stops typing
     editor.addEventListener("input", function() {
@@ -59,6 +60,17 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         reader.readAsDataURL(file);
+    });
+
+    // Document name input functionality
+    docNameInput.addEventListener("input", function() {
+        updateDocumentTitle(); // Update document title when document name changes
+    });
+
+    // Upload button functionality
+    var uploadBtn = document.getElementById("uploadBtn");
+    uploadBtn.addEventListener("click", function() {
+        bgUploadInput.click(); // Trigger click on background image upload input
     });
 
     // Toggle style buttons
@@ -121,12 +133,24 @@ document.addEventListener("DOMContentLoaded", function() {
         var blob = new Blob([textToExport], { type: "text/plain" }); // Create a Blob containing the text
         var url = URL.createObjectURL(blob); // Create a URL for the Blob
 
+        var docName = docNameInput.value.trim() || "document"; // Get the document name, fallback to "document" if empty
+        var fileName = docName + ".txt"; // Construct the file name
+
         // Create a temporary <a> element to trigger the download
         var a = document.createElement("a");
         a.href = url;
-        a.download = "document.txt"; // Set the filename for the download
+        a.download = fileName; // Set the filename for the download
         document.body.appendChild(a);
         a.click(); // Click the <a> element to trigger the download
         document.body.removeChild(a); // Remove the <a> element
+    }
+
+    function updateDocumentTitle() {
+        var docName = docNameInput.value.trim();
+        if (docName !== "") {
+            document.title = docName + " - Online Word Program"; // Set document title
+        } else {
+            document.title = "Online Word Program"; // Default title
+        }
     }
 });
