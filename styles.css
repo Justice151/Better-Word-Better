@@ -68,6 +68,13 @@ body {
     background-color: #0056b3; /* Darker blue when active */
 }
 
+.toolbar button:focus,
+#docNameInput:focus,
+#fontSelect:focus,
+#fontSizeSelect:focus {
+    outline: none; /* Remove outline on focus for better visual appearance */
+}
+
 /* Previous code */
 .toolbar button#exportBtn {
     margin-left: 10px; /* Add margin to separate it from other buttons */
