@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Word Program</title>
+    <title>Online Word Processor</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     <div class="toolbar">
-        <button id="saveBtn" class="toolbar-button"><i class="fas fa-save"></i></button>
-        <button id="exportBtn" class="toolbar-button"><i class="fas fa-file-download"></i></button>
-        <button id="importBtn" class="toolbar-button"><i class="fas fa-file-upload"></i></button>
-        <button id="bgBtn" class="toolbar-button"><i class="fas fa-image"></i></button>
+        <button id="saveBtn" class="toolbar-button"><i class="fas fa-save"></i> Save</button>
+        <button id="exportBtn" class="toolbar-button"><i class="fas fa-file-download"></i> Export</button>
+        <button id="importBtn" class="toolbar-button"><i class="fas fa-file-upload"></i> Import</button>
+        <button id="bgBtn" class="toolbar-button"><i class="fas fa-image"></i> Set Background</button>
         <select id="fontSelect" class="toolbar-dropdown">
             <option value="Arial">Arial</option>
             <option value="Verdana">Verdana</option>
@@ -20,19 +20,19 @@
             <!-- Add more font options as needed -->
         </select>
         <select id="fontSizeSelect" class="toolbar-dropdown">
-            <option value="12">12</option>
-            <option value="14">14</option>
-            <option value="16">16</option>
+            <option value="12">12px</option>
+            <option value="14">14px</option>
+            <option value="16">16px</option>
             <!-- Add more font size options as needed -->
         </select>
-        <button id="addImageBtn" class="toolbar-button"><i class="fas fa-image"></i></button>
-        <button id="undoBtn" class="toolbar-button"><i class="fas fa-undo"></i></button>
-        <button id="redoBtn" class="toolbar-button"><i class="fas fa-redo"></i></button>
+        <button id="addImageBtn" class="toolbar-button"><i class="fas fa-image"></i> Add Image</button>
+        <button id="undoBtn" class="toolbar-button"><i class="fas fa-undo"></i> Undo</button>
+        <button id="redoBtn" class="toolbar-button"><i class="fas fa-redo"></i> Redo</button>
     </div>
     <div id="editor" contenteditable="true"></div>
-    <input type="file" id="importFile">
-    <input type="file" id="bgUpload" accept="image/*">
-    <input type="file" id="imageUpload" accept="image/*">
+    <input type="file" id="importFile" style="display: none;">
+    <input type="file" id="bgUpload" accept="image/*" style="display: none;">
+    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
     <input type="text" id="docNameInput" placeholder="Enter document name...">
     <script src="script.js"></script>
 </body>
