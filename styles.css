@@ -14,6 +14,12 @@ body {
     max-width: 800px;
     width: 100%;
     margin: 0 auto; /* Center the container horizontally */
+    background-color: #fff; /* White background */
+    padding: 20px; /* Add padding for better visual appearance */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ced4da; /* Light border */
+    box-sizing: border-box;
 }
 
 #docNameInput {
@@ -22,8 +28,8 @@ body {
     border: 1px solid #ced4da; /* Light border */
     border-radius: 5px;
     font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
+    width: calc(100% - 32px); /* Adjust width to account for padding */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 #editor {
@@ -38,7 +44,6 @@ body {
     width: 100%;
     box-sizing: border-box;
     background-color: #fff; /* White background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .toolbar {
