@@ -3,12 +3,42 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f9fa; /* Light gray background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
     max-width: 800px;
     width: 100%;
-    margin: 20px auto; /* Center the container horizontally and add some space around it */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+#docNameInput {
+    margin-bottom: 10px; /* Add margin below the input */
+    padding: 8px 16px;
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#editor {
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 5px;
+    min-height: 50vh; /* Extend down 50% of the viewport height */
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .toolbar {
@@ -16,6 +46,7 @@ body {
     padding: 10px 0;
     text-align: center;
     border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Add margin space above the toolbar */
 }
 
 .toolbar button {
@@ -34,37 +65,11 @@ body {
     margin-left: 10px; /* Add margin to separate buttons */
 }
 
-#editor {
-    border: 1px solid #ced4da; /* Light border */
-    border-radius: 5px;
-    min-height: 50vh;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 10px;
-    font-size: 16px;
-    line-height: 1.6;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #fff; /* White background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
-
-#docNameInput {
-    margin-left: 10px; /* Add margin to separate document name input */
-    padding: 5px 10px;
-    border: 1px solid #ced4da; /* Light border */
-    border-radius: 5px;
-    font-size: 16px;
-    width: 200px;
-}
-
-.toolbar button:hover,
-#docNameInput:hover {
+.toolbar button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-.toolbar button:active,
-#docNameInput:active {
+.toolbar button:active {
     background-color: #0056b3; /* Darker blue when active */
 }
 
@@ -73,9 +78,4 @@ body {
 #fontSelect:focus,
 #fontSizeSelect:focus {
     outline: none; /* Remove outline on focus for better visual appearance */
-}
-
-/* Previous code */
-.toolbar button#exportBtn {
-    margin-left: 10px; /* Add margin to separate it from other buttons */
 }
