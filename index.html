@@ -4,26 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Word Program</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="toolbar">
-            <button id="boldBtn"><b>B</b></button>
-            <button id="italicBtn"><i>I</i></button>
-            <button id="underlineBtn"><u>U</u></button>
-            <button id="saveBtn">Save (Ctrl + S)</button>
-            <input type="text" id="docNameInput" placeholder="Document Name">
-            <input type="file" id="importFile" accept=".txt" style="display: none;">
-            <button id="importBtn">Import</button>
-            <button id="exportBtn">Export</button>
-            <input type="file" id="bgUpload" accept="image/*" style="display: none;">
-            <button id="bgBtn">Set Background</button>
-            <input type="file" id="imageUpload" accept="image/*" style="display: none;"> <!-- Image upload input -->
-            <button id="addImageBtn">Add Image</button> <!-- Button to trigger image upload -->
-        </div>
-        <div id="editor" contenteditable="true" spellcheck="true"></div>
+    <div class="toolbar">
+        <button id="saveBtn" class="toolbar-button"><i class="fas fa-save"></i></button>
+        <button id="exportBtn" class="toolbar-button"><i class="fas fa-file-download"></i></button>
+        <button id="importBtn" class="toolbar-button"><i class="fas fa-file-upload"></i></button>
+        <button id="bgBtn" class="toolbar-button"><i class="fas fa-image"></i></button>
+        <select id="fontSelect" class="toolbar-dropdown">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <!-- Add more font options as needed -->
+        </select>
+        <select id="fontSizeSelect" class="toolbar-dropdown">
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+            <!-- Add more font size options as needed -->
+        </select>
+        <button id="addImageBtn" class="toolbar-button"><i class="fas fa-image"></i></button>
+        <button id="undoBtn" class="toolbar-button"><i class="fas fa-undo"></i></button>
+        <button id="redoBtn" class="toolbar-button"><i class="fas fa-redo"></i></button>
     </div>
+    <div id="editor" contenteditable="true"></div>
+    <input type="file" id="importFile" style="display: none;">
+    <input type="file" id="bgUpload" accept="image/*" style="display: none;">
+    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+    <input type="text" id="docNameInput" placeholder="Enter document name...">
     <script src="script.js"></script>
 </body>
 </html>
