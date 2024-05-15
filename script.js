@@ -2,9 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var editor = document.getElementById("editor");
     var docNameInput = document.getElementById("docNameInput");
 
-    // Save text to localStorage when user stops typing
+    // Save text to localStorage when user stops typing or at intervals
+    var autosaveTimer; // Timer variable for autosave
     editor.addEventListener("input", function() {
-        saveToLocalStorage(editor.innerHTML);
+        clearTimeout(autosaveTimer); // Clear previous timer
+        autosaveTimer = setTimeout(function() {
+            saveToLocalStorage(editor.innerHTML);
+            alert("Document autosaved!");
+        }, 2000); // Autosave after 2 seconds of inactivity
     });
 
     // Load text from localStorage when the page loads
