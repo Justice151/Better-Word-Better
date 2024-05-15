@@ -1,84 +1,74 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f8f9fa; /* Light gray background */
-}
-
-.container {
-    max-width: 800px;
-    width: 100%;
-    margin: 20px auto; /* Center the container horizontally and add some space around it */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100%;
 }
 
 .toolbar {
-    background-color: #343a40; /* Dark background for the toolbar */
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 5px; /* Rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
 }
 
-.toolbar button {
-    background-color: #007bff; /* Blue background */
-    color: #fff; /* White text */
+.toolbar-button,
+.toolbar-dropdown {
+    background-color: #4285f4;
+    color: #000;
     border: none;
     border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 16px;
+    padding: 8px;
+    margin-right: 5px;
     cursor: pointer;
-    margin: 0 5px; /* Add margin between buttons */
 }
 
-.toolbar button#exportBtn,
-.toolbar button#bgBtn { /* Adjust styles for export and background buttons */
-    margin-left: 10px; /* Add margin to separate buttons */
+.toolbar-dropdown {
+    padding: 5px;
+}
+
+.toolbar-button:hover,
+.toolbar-dropdown:hover {
+    background-color: #3c78d8;
+}
+
+.toolbar-button:active,
+.toolbar-dropdown:active {
+    background-color: #2962c2;
+}
+
+.toolbar-dropdown:focus {
+    outline: none;
+}
+
+.toolbar-button:focus {
+    outline: none;
+}
+
+.toolbar-button i {
+    font-size: 16px;
+}
+
+.toolbar-dropdown {
+    font-size: 14px;
 }
 
 #editor {
-    border: 1px solid #ced4da; /* Light border */
-    border-radius: 5px;
-    min-height: 50vh;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 10px;
-    font-size: 16px;
-    line-height: 1.6;
     width: 100%;
+    min-height: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fff;
     box-sizing: border-box;
-    background-color: #fff; /* White background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 #docNameInput {
-    margin-left: 10px; /* Add margin to separate document name input */
-    padding: 5px 10px;
-    border: 1px solid #ced4da; /* Light border */
-    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
     font-size: 16px;
-    width: 200px;
-}
-
-.toolbar button:hover,
-#docNameInput:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-.toolbar button:active,
-#docNameInput:active {
-    background-color: #0056b3; /* Darker blue when active */
-}
-
-/* Previous code */
-.toolbar button {
-    background-color: #007bff; /* Blue background */
-    color: #000; /* Black text */
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.toolbar button#exportBtn {
-    margin-left: 10px; /* Add margin to separate it from other buttons */
+    width: calc(100% - 20px);
+    box-sizing: border-box;
 }
