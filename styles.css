@@ -30,6 +30,17 @@ body {
     cursor: pointer;
 }
 
+.toolbar button#exportBtn {
+    background-color: #007bff; /* Blue background */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px; /* Add margin to separate it from other buttons */
+}
+
 #editor {
     border: 1px solid #000;
     border-radius: 5px;
