@@ -67,10 +67,24 @@ document.addEventListener("DOMContentLoaded", function() {
         updateDocumentTitle(); // Update document title when document name changes
     });
 
-    // Upload button functionality
-    var uploadBtn = document.getElementById("uploadBtn");
-    uploadBtn.addEventListener("click", function() {
-        bgUploadInput.click(); // Trigger click on background image upload input
+    // Add Image button functionality
+    var addImageBtn = document.getElementById("addImageBtn");
+    var imageUploadInput = document.getElementById("imageUpload");
+    addImageBtn.addEventListener("click", function() {
+        imageUploadInput.click(); // Trigger click on image upload input
+    });
+
+    imageUploadInput.addEventListener("change", function(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function() {
+            var img = new Image();
+            img.src = reader.result;
+            editor.appendChild(img); // Append the image to the editor
+        };
+
+        reader.readAsDataURL(file);
     });
 
     // Toggle style buttons
