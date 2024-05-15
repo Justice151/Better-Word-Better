@@ -8,10 +8,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <div class="container">
-        <input type="text" id="docNameInput" placeholder="Enter document name...">
-        <div id="editor" contenteditable="true"></div>
-    </div>
     <div class="toolbar">
         <button id="saveBtn" class="toolbar-button"><i class="fas fa-save"></i> Save</button>
         <button id="exportBtn" class="toolbar-button"><i class="fas fa-file-download"></i> Export</button>
@@ -32,6 +28,10 @@
         <button id="addImageBtn" class="toolbar-button"><i class="fas fa-image"></i> Add Image</button>
         <button id="undoBtn" class="toolbar-button"><i class="fas fa-undo"></i> Undo</button>
         <button id="redoBtn" class="toolbar-button"><i class="fas fa-redo"></i> Redo</button>
+    </div>
+    <div class="container">
+        <input type="text" id="docNameInput" placeholder="Enter document name...">
+        <div id="editor" contenteditable="true"></div>
     </div>
     <input type="file" id="importFile" style="display: none;">
     <input type="file" id="bgUpload" accept="image/*" style="display: none;">
