@@ -46,7 +46,8 @@ body {
     padding: 10px 0;
     text-align: center;
     border-radius: 5px; /* Rounded corners */
-    margin-top: 10px; /* Add margin space above the toolbar */
+    margin: 20px auto; /* Center the toolbar horizontally */
+    max-width: 800px; /* Limit the width of the toolbar */
 }
 
 .toolbar button {
