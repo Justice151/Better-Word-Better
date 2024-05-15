@@ -19,6 +19,24 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Document saved to local storage!");
     });
 
+    // Keyboard shortcuts
+    document.addEventListener("keydown", function(event) {
+        if (event.ctrlKey && event.key === "s") {
+            event.preventDefault(); // Prevent the default browser save action
+            saveToLocalStorage(editor.innerHTML);
+            alert("Document saved to local storage!");
+        }
+        else if (event.ctrlKey && event.key === "b") {
+            document.execCommand("bold");
+        }
+        else if (event.ctrlKey && event.key === "i") {
+            document.execCommand("italic");
+        }
+        else if (event.ctrlKey && event.key === "u") {
+            document.execCommand("underline");
+        }
+    });
+
     function saveToLocalStorage(text) {
         localStorage.setItem("text", text);
     }
