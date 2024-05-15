@@ -19,6 +19,33 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Document saved to local storage!");
     });
 
+    // Toggle style buttons
+    var boldBtn = document.getElementById("boldBtn");
+    var italicBtn = document.getElementById("italicBtn");
+    var underlineBtn = document.getElementById("underlineBtn");
+
+    var isBold = false;
+    var isItalic = false;
+    var isUnderline = false;
+
+    boldBtn.addEventListener("click", function() {
+        isBold = !isBold;
+        document.execCommand("bold");
+        boldBtn.classList.toggle("active", isBold);
+    });
+
+    italicBtn.addEventListener("click", function() {
+        isItalic = !isItalic;
+        document.execCommand("italic");
+        italicBtn.classList.toggle("active", isItalic);
+    });
+
+    underlineBtn.addEventListener("click", function() {
+        isUnderline = !isUnderline;
+        document.execCommand("underline");
+        underlineBtn.classList.toggle("active", isUnderline);
+    });
+
     // Keyboard shortcuts
     document.addEventListener("keydown", function(event) {
         if (event.ctrlKey && event.key === "s") {
@@ -27,13 +54,19 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Document saved to local storage!");
         }
         else if (event.ctrlKey && event.key === "b") {
+            isBold = !isBold;
             document.execCommand("bold");
+            boldBtn.classList.toggle("active", isBold);
         }
         else if (event.ctrlKey && event.key === "i") {
+            isItalic = !isItalic;
             document.execCommand("italic");
+            italicBtn.classList.toggle("active", isItalic);
         }
         else if (event.ctrlKey && event.key === "u") {
+            isUnderline = !isUnderline;
             document.execCommand("underline");
+            underlineBtn.classList.toggle("active", isUnderline);
         }
     });
 
