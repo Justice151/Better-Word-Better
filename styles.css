@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #f5f5f5;
 }
 
 .container {
@@ -16,30 +16,31 @@ body {
 }
 
 .toolbar {
-    background-color: #007bff;
+    background: linear-gradient(to right, #007bff, #0056b3);
     padding: 10px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
 .toolbar-button {
-    background-color: #0056b3;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
     margin: 0 5px;
+    transition: background-color 0.3s ease;
 }
 
 .toolbar-dropdown {
-    background-color: #0056b3;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
     margin: 0 5px;
@@ -47,7 +48,7 @@ body {
 
 .toolbar-button:hover,
 .toolbar-dropdown:hover {
-    background-color: #004080;
+    background-color: #0056b3;
 }
 
 .toolbar-button:active,
@@ -70,11 +71,11 @@ body {
 }
 
 #docNameInput {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    width: calc(100% - 42px);
+    width: calc(100% - 48px);
     box-sizing: border-box;
 }
 
@@ -85,18 +86,18 @@ body {
 }
 
 .toolbar-dropdown select {
-    background-color: #0056b3;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
     margin: 0 5px;
 }
 
 .toolbar-dropdown select:hover {
-    background-color: #004080;
+    background-color: #0056b3;
 }
 
 .toolbar-dropdown select:active {
